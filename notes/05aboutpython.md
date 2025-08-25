@@ -1,0 +1,6 @@
+- **No braces (`{}`):** Python uses indentation instead of braces to define code blocks.
+- **Indentation matters:** Code blocks are defined by their indentation level.
+- **No semicolons:** Statements do not require semicolons at the end.
+- **Readable code:** Python emphasizes readability and simplicity.
+- **Dynamically typed:** You do not need to declare variable data types.
+- **Everything is an object:** In Python, every data type is treated as a class.

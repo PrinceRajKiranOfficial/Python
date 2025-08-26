@@ -1,7 +1,7 @@
 student = {
     "name": "John",
     "age": 21,
-    "courses": "Python"
+    "courses": ["Python"]
 }
 
 print(student)
@@ -26,3 +26,6 @@ print(student)  # Output: {'name': 'John', 'age': 22, 'courses': ['Python'], 'ci
 
 student.pop("city")  # Remove a key-value pair by key
 print(student)  # Output: {'name': 'John', 'age': 22, 'courses': ['Python'], 'gender': 'Female'}
+
+del student["age"]  # Remove a key-value pair by key
+print(student)  # Output: {'name': 'John', 'courses': ['Python'], 'gender': 'Female'}

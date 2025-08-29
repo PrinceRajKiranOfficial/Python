@@ -60,3 +60,4 @@ print(obj.get_rollno())  # ✅ Access using getter
 - **Public:** Accessible everywhere (default)
 - **Protected:** Accessible within class & subclass (convention: `_var`)
 - **Private:** Accessible only inside class (convention: `__var`)
+X

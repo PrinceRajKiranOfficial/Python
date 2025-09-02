@@ -1,3 +1,4 @@
+
 """
 Encapsulation with Withdraw Example
 -----------------------------------
@@ -30,15 +31,39 @@ Deposit money before withdrawing. 💰"""
         return self.__balance
 
 
-# Main Program
-if __name__ == "__main__":
-    while True:
-        print("\n🏦 Welcome to Prince's Bank 🏦")
-        init_balance = float(input("Enter initial balance: "))
+def main():
+    """Main function to run the bank account simulation."""
+    print("\n🏦 Welcome to Prince's Bank 🏦")
+
+    # --- Get Initial Balance ---
+    try:
+        init_balance = float(input("Enter initial balance to deposit: "))
+        if init_balance < 0:
+            print("Initial balance cannot be negative. Starting with $0.")
+            init_balance = 0.0
         accn = BankAccount(init_balance)
+    except ValueError:
+        print("Invalid input. Starting with a default balance of $0.")
+        accn = BankAccount(0.0)
 
-        wih_balance = float(input("Enter withdraw amount: "))
+    # --- Process Withdrawal ---
+    try:
+        wih_balance = float(input("Enter amount to withdraw: "))
         accn.withdraw(wih_balance)
+    except ValueError:
+        print("Invalid amount. Please enter a number.")
 
-        print("💵 Final Balance:", accn.get_balance())
-        print("🙏 Thank You, Visit Again!")
+    # --- Display Final Balance ---
+    print(f"💵 Final Balance: ${accn.get_balance():.2f}")
+    print("🙏 Thank You for banking with us!")
+
+
+if __name__ == "__main__":
+    # The loop allows the user to perform multiple transactions without restarting the script.
+    while True:
+        main()
+        
+        # Ask user if they want to perform another transaction
+        another_transaction = input("\nDo you want to perform another transaction? (yes/no): ").lower()
+        if another_transaction != 'yes':
+            break
